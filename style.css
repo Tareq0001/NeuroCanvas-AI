@@ -1,0 +1,26 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+      body { background: #000; color: #fff; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+      .topbar { height: 64px; border-bottom: 1px solid #27272a; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; background: #09090b; z-index: 10; }
+      .logo { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+      .logo span { color: #10b981; }
+      .actions { display: flex; gap: 12px; }
+      .btn-outline { background: transparent; border: 1px solid #27272a; color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+      .btn-primary { background: #10b981; border: none; color: #000; padding: 8px 16px; border-radius: 8px; font-weight: 800; cursor: pointer; box-shadow: 0 0 15px rgba(16,185,129,0.4); }
+      .main { display: flex; flex: 1; overflow: hidden; }
+      .sidebar { width: 280px; background: #09090b; border-right: 1px solid #27272a; padding: 24px; z-index: 5; }
+      .sidebar h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #a1a1aa; margin-bottom: 16px; }
+      .node-item { background: #18181b; border: 1px solid #27272a; padding: 12px; border-radius: 12px; display: flex; align-items: center; gap: 12px; margin-bottom: 12px; cursor: grab; font-weight: 600; transition: border 0.2s; }
+      .node-item:hover { border-color: #10b981; }
+      .icon { font-size: 20px; }
+      .canvas { flex: 1; position: relative; overflow: hidden; background: #000; }
+      .grid-bg { position: absolute; inset: 0; background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); }
+      .connections { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+      .flowing-line { animation: flow 1s linear infinite; }
+      @keyframes flow { to { stroke-dashoffset: -10; } }
+      .node-card { position: absolute; width: 200px; background: rgba(24,24,27,0.8); backdrop-filter: blur(10px); border: 1px solid #27272a; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); z-index: 2; cursor: move; }
+      .node-header { padding: 12px; border-bottom: 1px solid #27272a; font-weight: 800; font-size: 14px; background: rgba(255,255,255,0.02); border-radius: 12px 12px 0 0; }
+      .node-header.emerald { color: #10b981; }
+      .node-body { padding: 16px; font-size: 12px; color: #a1a1aa; }
+      .port { position: absolute; width: 12px; height: 12px; background: #10b981; border-radius: 50%; border: 2px solid #000; top: 50%; transform: translateY(-50%); }
+      .port-in { left: -6px; }
+      .port-out { right: -6px; }

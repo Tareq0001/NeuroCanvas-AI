@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NeuroCanvas | AI Workflow Builder</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+      <div class="topbar">
+        <div class="logo">Neuro<span>Canvas</span></div>
+        <div class="actions"><button class="btn-outline">Test Run</button><button class="btn-primary">Deploy Agent</button></div>
+      </div>
+      <div class="main">
+        <div class="sidebar">
+          <h3>Nodes</h3>
+          <div class="node-item" draggable="true" data-type="llm"><div class="icon">🧠</div> LLM Engine</div>
+          <div class="node-item" draggable="true" data-type="data"><div class="icon">📊</div> Data Loader</div>
+          <div class="node-item" draggable="true" data-type="api"><div class="icon">⚡</div> API Action</div>
+          <div class="node-item" draggable="true" data-type="output"><div class="icon">🎯</div> Output Format</div>
+        </div>
+        <div class="canvas" id="canvas">
+          <div class="grid-bg"></div>
+          <svg class="connections" id="connections"><path d="M 250 150 C 350 150, 350 250, 450 250" stroke="#10b981" stroke-width="3" fill="none" stroke-dasharray="5,5" class="flowing-line"/></svg>
+          
+          <div class="node-card" style="left: 50px; top: 100px;" id="node1">
+            <div class="node-header">Data Loader</div>
+            <div class="node-body">Source: CSV / API</div>
+            <div class="port port-out"></div>
+          </div>
+
+          <div class="node-card" style="left: 450px; top: 200px;" id="node2">
+            <div class="port port-in"></div>
+            <div class="node-header emerald">LLM Engine</div>
+            <div class="node-body">Model: GPT-4o</div>
+            <div class="port port-out"></div>
+          </div>
+        </div>
+      </div>
+      <script src="app.js"></script></body></html>
